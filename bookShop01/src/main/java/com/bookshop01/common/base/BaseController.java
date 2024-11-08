@@ -12,6 +12,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bookshop01.config.ConstValue;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -25,8 +26,7 @@ import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import com.bookshop01.goods.vo.ImageFileVO;
 
 public abstract class BaseController  {
-//	private static final String CURR_IMAGE_REPO_PATH = "C:\\shopping\\file_repo";
-	private static final String CURR_IMAGE_REPO_PATH = "/shopping/file_repo";
+	private static final String CURR_IMAGE_REPO_PATH = ConstValue.INSTANCE.DIR;
 
 	protected List<ImageFileVO> upload(MultipartHttpServletRequest multipartRequest) throws Exception{
 		List<ImageFileVO> fileList= new ArrayList<ImageFileVO>();

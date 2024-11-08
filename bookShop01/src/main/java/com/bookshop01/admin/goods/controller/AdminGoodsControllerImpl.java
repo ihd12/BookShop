@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.bookshop01.config.ConstValue;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -32,8 +33,7 @@ import com.bookshop01.member.vo.MemberVO;
 @Controller("adminGoodsController")
 @RequestMapping(value="/admin/goods")
 public class AdminGoodsControllerImpl extends BaseController  implements AdminGoodsController{
-//	private static final String CURR_IMAGE_REPO_PATH = "C:\\shopping\\file_repo";
-	private static final String CURR_IMAGE_REPO_PATH = "/shopping/file_repo";
+	private static final String CURR_IMAGE_REPO_PATH = ConstValue.INSTANCE.DIR;
 	@Autowired
 	private AdminGoodsService adminGoodsService;
 	

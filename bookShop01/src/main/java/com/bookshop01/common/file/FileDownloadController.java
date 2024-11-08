@@ -8,6 +8,7 @@ import java.io.OutputStream;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bookshop01.config.ConstValue;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,8 +18,7 @@ import net.coobird.thumbnailator.Thumbnails;
 
 @Controller
 public class FileDownloadController {
-//	private static String CURR_IMAGE_REPO_PATH = "C:\\shopping\\file_repo";
-	private static String CURR_IMAGE_REPO_PATH = "/shopping/file_repo";
+	private static String CURR_IMAGE_REPO_PATH = ConstValue.INSTANCE.DIR;
 	
 	@RequestMapping("/download")
 	protected void download(@RequestParam("fileName") String fileName,
