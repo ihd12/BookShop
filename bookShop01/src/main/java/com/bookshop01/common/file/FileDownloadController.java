@@ -25,7 +25,10 @@ public class FileDownloadController {
 		                 	@RequestParam("goods_id") String goods_id,
 			                 HttpServletResponse response) throws Exception {
 		OutputStream out = response.getOutputStream();
-		String filePath=CURR_IMAGE_REPO_PATH+"\\"+goods_id+"\\"+fileName;
+		//win
+//		String filePath=CURR_IMAGE_REPO_PATH+"\\"+goods_id+"\\"+fileName;
+		//linux
+		String filePath=CURR_IMAGE_REPO_PATH+"/"+goods_id+"/"+fileName;
 		File image=new File(filePath);
 
 		response.setHeader("Cache-Control","no-cache");
@@ -48,7 +51,8 @@ public class FileDownloadController {
                             	@RequestParam("goods_id") String goods_id,
 			                 HttpServletResponse response) throws Exception {
 		OutputStream out = response.getOutputStream();
-		String filePath=CURR_IMAGE_REPO_PATH+"\\"+goods_id+"\\"+fileName;
+//		String filePath=CURR_IMAGE_REPO_PATH+"\\"+goods_id+"\\"+fileName;
+		String filePath=CURR_IMAGE_REPO_PATH+"/"+goods_id+"/"+fileName;
 		File image=new File(filePath);
 		
 		if (image.exists()) { 
